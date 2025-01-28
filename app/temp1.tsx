@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin();
 const HeroSection = () => {
   useGSAP(() => {
-    let t1 = gsap.timeline({});
+    const t1 = gsap.timeline({});
     t1.from(".box", {
       // yPercent: 100,
       duration: 1,
@@ -148,9 +148,9 @@ const Navbar = () => {
 };
 const SectionHero = () => {
   useGSAP(() => {
-    let getRatio = (el) =>
+    const getRatio = (el: any) =>
       window.innerHeight / (window.innerHeight + el.offsetHeight);
-    let t1 = gsap.timeline({});
+    const t1 = gsap.timeline({});
     t1.to(".hero-section", {
       ease: "none",
       duration: 1,
