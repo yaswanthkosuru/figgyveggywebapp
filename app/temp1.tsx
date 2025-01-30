@@ -6,6 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import { Menu, X } from "lucide-react"; // Icons for mobile menu toggle
 import Image from "next/image";
+import { AdventureFont, InterSans } from "./fonts";
+import { Inter } from "next/font/google";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(Flip);
 gsap.registerPlugin(ScrollTrigger);
@@ -30,7 +32,7 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center">
         <Image
-          src="/bridge.jpg" // Ensure the image is placed in the public folder
+          src="/hero.jpeg" // Ensure the image is placed in the public folder
           alt="Background"
           fill
           className=" bg-cover"
@@ -57,11 +59,16 @@ const HeroSection = () => {
 
       {/* Text Overlay */}
       <div className=" relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <h1 className="overlay-text text-4xl md:text-6xl font-bold uppercase tracking-widest">
-          Welcome
-        </h1>
-        <p className="overlay-text qmt-4 text-lg md:text-2xl font-light">
-          Your inspirational quote goes here.
+        <span
+          className={` ${AdventureFont.className} tracking-wider  overlay-text font-extrabold text-[50px] md:text-6xl uppercase`}
+        >
+          Simplify Your Hostel Management Now
+        </span>
+
+        <p
+          className={`overlay-text qmt-4 text-lg md:text-2xl font-light ${InterSans.className} tracking-wide mt-3`}
+        >
+          Helps You simplify your hostel management
         </p>
       </div>
     </div>
@@ -77,11 +84,13 @@ const Navbar = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="bg-white text-black shadow-md">
+    <nav
+      className={` ${AdventureFont.className} tracking-wide text-base bg-white text-black shadow-md`}
+    >
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <div className="text-xl font-bold uppercase">
-          <Image src="/Vector.svg" width={60} height={60} alt="brand" />
+          <Image src="/global.svg" width={60} height={60} alt="brand" />
           {/* <a href="/">Brand</a> */}
         </div>
 
@@ -159,7 +168,7 @@ const SectionHero = () => {
         start: "top top",
         end: "bottom top",
         scrub: true,
-        markers: true,
+        // markers: true,
         pinSpacing: false,
       },
     });
