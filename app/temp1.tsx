@@ -25,12 +25,12 @@ const Navbar = () => {
 const Background = () => {
   return (
     <div>
-      <div className="absolute -right-3 -z-50">
+      <div className="hidden sm:block sm:absolute -right-3 -z-50">
         <div className="relative w-[250px] h-[500px]">
           <Image src="/left.svg" alt="background" className="" fill />
         </div>
       </div>
-      <div className="absolute -left-3 top-20 -z-50">
+      <div className="hidden sm:block sm:absolute -left-3 top-20 -z-50">
         <div className="relative w-[250px] h-[500px] -z-50">
           <Image src="/right.svg" alt="background" className="" fill />
         </div>
@@ -41,7 +41,7 @@ const Background = () => {
 const Home = () => {
   return (
     <div>
-      <div className="sm:mx-[138px] sm:mt-[72px]">
+      <div className="sm:mx-[100px] sm:mt-[50px]">
         <Navbar />
       </div>
       <div className="flex flex-col justify-center items-center h-[60vh] text-center">

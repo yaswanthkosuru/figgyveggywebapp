@@ -17,6 +17,13 @@ export default {
         Accent: "#e6cff7",
       },
     },
+    screens: {
+      sm: "350px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
