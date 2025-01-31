@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
 
@@ -9,5 +9,9 @@ export const AdventureFont = localFont({
 });
 export const InterSans = Inter({
   variable: "--inter-sans",
+  subsets: ["latin"],
+});
+export const OutFit = Outfit({
+  variable: "--outfit-sans",
   subsets: ["latin"],
 });

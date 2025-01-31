@@ -7,5 +7,16 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      colors: {
+        Text: "#000000",
+        Background: "#ffffff",
+        primary: "#a94cb8",
+        Secondary: "#c777df",
+        Accent: "#e6cff7",
+      },
+    },
+  },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

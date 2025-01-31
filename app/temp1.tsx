@@ -1,204 +1,67 @@
-"use client";
-import React, { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Flip } from "gsap/Flip";
-import { Menu, X } from "lucide-react"; // Icons for mobile menu toggle
+import React from "react";
+import { AdventureFont, InterSans, OutFit } from "./fonts";
+import Link from "next/link";
 import Image from "next/image";
-import { AdventureFont, InterSans } from "./fonts";
-import { Inter } from "next/font/google";
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(Flip);
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin();
-const HeroSection = () => {
-  useGSAP(() => {
-    const t1 = gsap.timeline({});
-    t1.from(".box", {
-      // yPercent: 100,
-      duration: 1,
-      opacity: 0,
-      clipPath: "inset(100% 0% 0 0)",
-      ease: "power1.Out",
-    });
-    t1.from(".overlay-text", {
-      xPercent: 100,
-      opacity: 0,
-    });
-  }, {});
+const Navbar = () => {
   return (
-    <div className="box relative h-screen w-full bg-black">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center">
-        <Image
-          src="/hero.jpeg" // Ensure the image is placed in the public folder
-          alt="Background"
-          fill
-          className=" bg-cover"
-          objectFit="cover"
-          objectPosition="center"
-          quality={100}
-        />
-        {/* 
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/video.mp4" type="video/mp4" />
-          {/* Add more <source> tags for other formats if necessary */}
-        {/* Your browser does not support the video tag.
-        </video>  */}
+    <div className="flex justify-between items-center p-4">
+      <div className="text-2xl font-bold">
+        <Image src="/logo.svg" alt="logo" width={80} height={80} />
       </div>
-
-      {/* Overlay Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/70"></div>
-
-      {/* Text Overlay */}
-      <div className=" relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-        <span
-          className={` ${AdventureFont.className} tracking-wider  overlay-text font-extrabold text-[50px] md:text-6xl uppercase`}
-        >
-          Simplify Your Hostel Management Now
-        </span>
-
-        <p
-          className={`overlay-text qmt-4 text-lg md:text-2xl font-light ${InterSans.className} tracking-wide mt-3`}
-        >
-          Helps You simplify your hostel management
-        </p>
+      <div className="flex space-x-10">
+        <a href="#" className="text-lg">
+          Home
+        </a>
+        <a href="#" className="text-lg">
+          About
+        </a>
+        <a href="#" className="text-lg">
+          Contact
+        </a>
       </div>
     </div>
   );
 };
-
-const MainSection = () => {
-  return <div className="w-full h-screen bg-slate-400">MainSection</div>;
-};
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-
+const Background = () => {
   return (
-    <nav
-      className={` ${AdventureFont.className} tracking-wide text-base bg-white text-black shadow-md`}
-    >
-      <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        {/* Logo */}
-        <div className="text-xl font-bold uppercase">
-          <Image src="/global.svg" width={60} height={60} alt="brand" />
-          {/* <a href="/">Brand</a> */}
-        </div>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6">
-          <a href="#home" className="hover:text-gray-400">
-            Home
-          </a>
-          <a href="#about" className="hover:text-gray-400">
-            About
-          </a>
-          <a href="#services" className="hover:text-gray-400">
-            Services
-          </a>
-          <a href="#contact" className="hover:text-gray-400">
-            Contact
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-gray-300 hover:text-white"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white text-black px-4 pb-4">
-          <a
-            href="#home"
-            className="block py-2 hover:text-gray-400"
-            onClick={toggleMenu}
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="block py-2 hover:text-gray-400"
-            onClick={toggleMenu}
-          >
-            About
-          </a>
-          <a
-            href="#services"
-            className="block py-2 hover:text-gray-400"
-            onClick={toggleMenu}
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            className="block py-2 hover:text-gray-400"
-            onClick={toggleMenu}
-          >
-            Contact
-          </a>
-        </div>
-      )}
-    </nav>
-  );
-};
-const SectionHero = () => {
-  useGSAP(() => {
-    const getRatio = (el: any) =>
-      window.innerHeight / (window.innerHeight + el.offsetHeight);
-    const t1 = gsap.timeline({});
-    t1.to(".hero-section", {
-      ease: "none",
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".hero-section",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-        // markers: true,
-        pinSpacing: false,
-      },
-    });
-  }, {});
-  return (
-    <>
-      <div>
-        <div className="z-20 hero-section">
-          <div className="hero-content">
-            <HeroSection />
-          </div>
+    <div>
+      <div className="absolute -right-3 -z-50">
+        <div className="relative w-[250px] h-[500px]">
+          <Image src="/left.svg" alt="background" className="" fill />
         </div>
       </div>
-    </>
+      <div className="absolute -left-3 top-20 -z-50">
+        <div className="relative w-[250px] h-[500px] -z-50">
+          <Image src="/right.svg" alt="background" className="" fill />
+        </div>
+      </div>
+    </div>
   );
 };
-const Page = () => {
-  const ref = useRef(null);
-
+const Home = () => {
   return (
-    <div ref={ref} className=" text-4xl">
-      <div className=" fixed top-0 left-0 right-0 z-10">
+    <div>
+      <div className="sm:mx-[138px] sm:mt-[72px]">
         <Navbar />
       </div>
-      <SectionHero />
-      <div>
-        <MainSection />
+      <div className="flex flex-col justify-center items-center h-[60vh] text-center">
+        <Background />
+        <div className={`${OutFit.className}`}>
+          <p className="text-[50px] sm:text-[70px] font-normal">
+            Managing Your <span className="text-primary">Hostels</span> Has
+            <br />
+            Never Been Easier
+          </p>
+        </div>
+        <div className="mt-6"></div>
+        <div className={`${OutFit.className} ml-20`}>
+          <span className="text-2xl font-light leading-6 tracking-wide">
+            Simplified <span className="text-primary">Operations</span>
+          </span>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Page;
+export default Home;
