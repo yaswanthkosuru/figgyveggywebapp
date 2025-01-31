@@ -25,7 +25,7 @@ const Navbar = () => {
 const Background = () => {
   return (
     <div>
-      <div className="hidden sm:block sm:absolute -right-3 -z-50">
+      <div className="hidden md:block md:hide sm:block sm:absolute -right-3 -z-50">
         <div className="relative w-[250px] h-[500px]">
           <Image src="/left.svg" alt="background" className="" fill />
         </div>
