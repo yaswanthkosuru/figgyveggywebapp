@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
+import { OutFit } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`overflow-x-hidden antialiased`}>{children}</body>
+      <body className={` overflow-x-hidden antialiased bg-black`}>
+        {children}
+      </body>
     </html>
   );
 }
