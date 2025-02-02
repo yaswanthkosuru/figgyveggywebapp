@@ -6,10 +6,16 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import AboutSection from "@/components/About";
+import LeftContentRightImage from "@/components/showcase1";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 function Home() {
-  const images = ["/forest6.jpg", "/forest7.jpg", "/forest4.jpg"]; // Add more images as needed
+  const images = [
+    "/sunsetpaddy.jpeg",
+    // "/forest6.jpg",
+    // "/forest7.jpg",
+    "/forest4.jpg",
+  ]; // Add more images as needed
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]); // Store refs for each image
 
   useGSAP(() => {
@@ -80,10 +86,13 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="p-2">
+      <div className="">
         <AboutSection />
       </div>
-      <div className="h-screen w-full bg-black"></div>
+      <div>
+        <LeftContentRightImage />
+      </div>
+      <div className="h-screen w-full bg-[#3A3939]"></div>
     </div>
   );
 }

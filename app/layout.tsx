@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` overflow-x-hidden antialiased bg-black`}>
+      <body className={` overflow-x-hidden antialiased `}>
         <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
