@@ -70,7 +70,7 @@ const AboutSection = () => {
         ScrollTrigger.maxScroll(window),
       ease: "none",
       scrollTrigger: {
-        start: "center center",
+        start: "center 90%",
         end: "bottom top",
         invalidateOnRefresh: true,
         scrub: 0,
