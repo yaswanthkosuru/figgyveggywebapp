@@ -26,7 +26,7 @@ const AboutText = () => {
           );
 
           words.forEach((word, index) => {
-            gsap.to(word, {
+            gsap.to(word as Element, {
               color:
                 index <= highlightIndex
                   ? "#ffffff"

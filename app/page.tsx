@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 function Home() {
   const images = ["/forest6.jpg", "/forest7.jpg", "/forest4.jpg"]; // Add more images as needed
-  const imageRefs = useRef([]); // Store refs for each image
+  const imageRefs = useRef<(HTMLImageElement | null)[]>([]); // Store refs for each image
 
   useGSAP(() => {
     let tl = gsap.timeline({ repeat: -1 });
@@ -59,7 +59,9 @@ function Home() {
               objectFit="cover"
               alt={`Background ${index + 1}`}
               className="absolute top-0 left-0 opacity-0"
-              ref={(el) => (imageRefs.current[index] = el)} // Store ref
+              ref={(el) => {
+                imageRefs.current[index] = el;
+              }} // Store ref
               style={{ zIndex: images.length - index }} // Ensure layering
             />
           ))}
