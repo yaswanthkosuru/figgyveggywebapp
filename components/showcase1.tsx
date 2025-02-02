@@ -1,3 +1,4 @@
+import { InterSans, OutFit } from "@/app/fonts";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -20,7 +21,7 @@ export default function LeftContentRightImage() {
       },
       {
         clipPath: "inset(0% 0% 0% 0%)",
-        duration: 2,
+        duration: 0.8,
         ease: "power1.inOut",
       }
     );
@@ -39,14 +40,11 @@ export default function LeftContentRightImage() {
     );
   }, {});
   return (
-    <div className="flex bg-[#F8F1E3] flex-col md:flex-row items-center justify-center max-w-7xl mx-auto p-6">
+    <div className="flex bg-[#F8F1E3] flex-col md:flex-row items-center justify-center  mx-auto">
       {/* Left Content */}
-      <div className="md:w-1/2 absolute z-10 text-orange-800 text-center md:text-left p-6">
+      <div className="md:w-1/2 absolute z-10 text-orange-700 text-center md:text-left">
         <p
-          className="text-transparent showcase1-header text-7xl font-bold uppercase"
-          style={{
-            WebkitTextStroke: "2px orange",
-          }}
+          className={`text-3xl text-center showcase1-header font-bold uppercase ${InterSans.className}`}
         >
           Healthy Crops, Prosperous Harvests!
         </p>
