@@ -7,6 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import AboutSection from "@/components/About";
 import LeftContentRightImage from "@/components/showcase1";
+import Showcase2 from "@/components/showcase2";
+import Showcase3 from "@/components/showcase3";
+import Footer from "@/components/Footer";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 function Home() {
@@ -54,7 +57,7 @@ function Home() {
     });
   });
   return (
-    <div>
+    <div className="bg-[#F8F1E3]">
       <div className="relative h-screen w-full text-center">
         <div className="imageList -z-10">
           {images.map((src, index) => (
@@ -92,7 +95,17 @@ function Home() {
       <div>
         <LeftContentRightImage />
       </div>
-      <div className="h-screen w-full bg-[#3A3939]"></div>
+      <div className="">
+        <Showcase3 />
+      </div>
+      <div className="">
+        <Showcase2 />
+      </div>
+
+      <div className=" mt-96 md:mt-0 h-screen w-full bg-[#1C1C1C]">
+        <Footer />
+      </div>
+      <div className="bg-[#1c1c1c] h-20"></div>
     </div>
   );
 }

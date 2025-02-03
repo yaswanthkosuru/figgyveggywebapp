@@ -25,6 +25,7 @@ export default function LeftContentRightImage() {
         ease: "power1.inOut",
       }
     );
+
     t1.fromTo(
       ".showcase1-header",
       {
@@ -36,15 +37,16 @@ export default function LeftContentRightImage() {
         opacity: 1,
         y: 0,
         ease: "power1.inOut",
-      }
+      },
+      "-=0.8"
     );
   }, {});
   return (
-    <div className="flex bg-[#F8F1E3] flex-col md:flex-row items-center justify-center  mx-auto">
+    <div className="flex  max-w-6xl flex-col md:flex-row items-center justify-center  mx-auto">
       {/* Left Content */}
-      <div className="md:w-1/2 absolute z-10 text-orange-700 text-center md:text-left">
+      <div className="md:w-1/2 z-10 text-orange-700 text-center md:text-left">
         <p
-          className={`text-3xl text-center showcase1-header font-bold uppercase ${InterSans.className}`}
+          className={`text-4xl text-center showcase1-header font-bold uppercase ${InterSans.className}`}
         >
           Healthy Crops, Prosperous Harvests!
         </p>
@@ -54,7 +56,7 @@ export default function LeftContentRightImage() {
       <div className="relative overflow-hidden md:w-1/2 flex justify-center p-6">
         <div className="relative rounded-lg overflow-hidden">
           <Image
-            src="/bottle2.jpg"
+            src="/pharma.jpeg"
             alt="Placeholder"
             width={400}
             height={200}
